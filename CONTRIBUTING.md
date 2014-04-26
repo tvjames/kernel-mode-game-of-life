@@ -1,0 +1,3 @@
+# Contributing 
+
+Go for it :)
