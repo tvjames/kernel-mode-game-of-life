@@ -9,6 +9,7 @@
 #include "io.h"
 #include "kb.h"
 #include "simulation.h"
+#include "random.h"
 
 void wait_loop()
 {
@@ -21,12 +22,12 @@ void kmain(void)
 {
     kb_init();
     screen_init();
-    simulation_init();
+    srand(port_byte_in(0x60)); //init seed for RNG from keyboard input
 
     screen_write_byte(0, 72, 0x00, Green, Black);
     screen_write_byte(0, 74, 0xFF, Green, Black);
 
-    simulation_init_spaceship_glider();
+    simulation_init_random();
 
     simulation_setup_viewport(1, 1, 78, 23);
 
@@ -72,7 +73,7 @@ void kmain(void)
             // r -> Reset simulation
             if (data == (0x13)) {
                 simulation_setup_viewport(1, 1, 78, 23);
-                simulation_init_spaceship_glider();
+                simulation_init_random();
                 simulation_print();
             }
 
