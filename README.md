@@ -1,5 +1,7 @@
 # Kernel Mode "Game of Life"
 
+![](screenshot.gif)
+
 This is an attempt to implement [Conway's Game of Life][1] as a simple protected mode i386 kernel. The primary purpose for this is as a learning exercise. 
 
 Based on the excellent intro by [Arjun Sreedharan][2] in the article [Kernel 101 – Let’s write a Kernel][3]
