@@ -10,6 +10,13 @@
 #include "kb.h"
 #include "simulation.h"
 
+void wait_loop()
+{
+    for(int i = 0; i < sizeof(int); i++) {
+        __asm__("PAUSE");
+    }
+}
+
 void kmain(void) 
 {
     kb_init();
@@ -77,16 +84,3 @@ void kmain(void)
 
     return;
 }
-
-void wait_loop()
-{
-    for(int i = 0; i < sizeof(int); i++) {
-        __asm__("PAUSE");
-    }
-}
-
-
-
-
-
-

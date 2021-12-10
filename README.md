@@ -30,6 +30,7 @@ This expects that qemu is installed an in the path. The ```qemu-system-i386``` e
     s       Move the viewport down
     a       Move the viewport left
     d       Move the viewport right
+    n       Advance the game 1 time step
 
 
 ## Builing on a mac
