@@ -1,5 +1,6 @@
 
 #include "io.h"
+#include "strings.h"
 #include "screen.h"
 
 #define _VIDEO_ADDRESS 0xb8000

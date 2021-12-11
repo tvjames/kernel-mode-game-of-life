@@ -1,6 +1,6 @@
 #include "screen.h"
-
 #include "simulation.h"
+#include "random.h"
 
 #define _CELLS_X 100
 #define _CELLS_Y 100
@@ -67,6 +67,20 @@ void simulation_init_spaceship_glider()
     cells[5][4] = 1;
 
     debug[5][4] = (char)1;
+}
+
+void simulation_init_random()
+{
+    simulation_init();
+
+    //generate random 1 or 0 for each cell
+    for (int i=0; i < _CELLS_X; i++) {
+        for (int j=0; j < _CELLS_Y; j++) {
+            rand() > 16383 ? cells[i][j] = 1 : 0 ;
+        }
+    }
+
+
 }
 
 void simulation_print()

@@ -2,7 +2,7 @@
 CC=gcc
 CFLAGS=-std=c99 -m32
 DEPS=kernel.h io.h
-OBJS=entry.o kernel.o main.o io.o screen.o simulation.o kb.o
+OBJS=entry.o kernel.o main.o io.o screen.o simulation.o kb.o strings.o random.o
 
 all: kernel
 
@@ -25,6 +25,12 @@ simulation.o: simulation.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 kb.o: kb.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+strings.o: strings.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+random.o: random.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 kernel: $(OBJS)
